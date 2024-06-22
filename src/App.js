@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './Home page/Navbar';
 import HomeContent from './Home page/HomeContent';
+import "./App.css";
 
 const App = () => {
   const curr_theme = localStorage.getItem('curr_theme');

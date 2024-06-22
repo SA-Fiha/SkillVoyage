@@ -10,7 +10,7 @@ const HomeContent = ({theme,setTheme}) => {
         }
       
   return (
-    <div>
+    <div className='Homepage'>
         <img src={theme === 'light' ? Homebg: Homebg_dark} className='Homebg'/>
         <button className="overlay-button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
         Get Started

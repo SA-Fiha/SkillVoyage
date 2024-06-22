@@ -6,6 +6,9 @@ import search_icon_light from '../assets/search-w.png';
 import search_icon_dark from '../assets/search-b.png';
 import toggle_light from '../assets/night.png';
 import toggle_dark from '../assets/day.png';
+import LoginButton from "../login-signup";
+import "../App.css";
+
 
 const Navbar = ({ theme, setTheme }) => {
 
@@ -24,7 +27,7 @@ const Navbar = ({ theme, setTheme }) => {
         <li>Account</li>
         <li>About us</li>
       </ul>
-
+      <LoginButton />
       <div className='search-box'>
         <input type="text" placeholder='Search' />
         <img src={theme === 'light' ? search_icon_light : search_icon_dark} alt=" " />

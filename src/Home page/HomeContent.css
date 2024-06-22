@@ -2,23 +2,41 @@
     transition: 0.5s;
 }
 .Homebg{
-    width: 1414px;
+    width: 100%;
 
 }
 .overlay-button {
     height: 50px;
     width: 180px;
     font-size: 18px;
-    top:555px;
+     top:40rem; 
+     bottom: 3rem;
     left: 65px;
     position: absolute;
-    padding: 10px 20px;
+    padding: 10px 20px; 
     cursor: pointer;
     border: none;
     background-color: #0c1844;
     color: #fff;
     border-radius: 10px;
+    
   }
 .dark .overlay-button{
-    background-color: #ff6969; 
+    background-color: #ff6969;
+    height: 50px;
+    width: 180px;
+    font-size: 18px;
+    top:40rem;
+    bottom: 3rem;
+    left: 65px;
+    position: absolute;
+    padding: 10px 20px; 
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    border-radius: 10px; 
+}
+.Homepage{
+    display: flex;
+    
 }
