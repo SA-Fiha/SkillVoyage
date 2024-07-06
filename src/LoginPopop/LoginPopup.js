@@ -59,18 +59,18 @@ const LoginPopup = ({ setShowLogin, theme }) => {
                     <img onClick={() => setShowLogin(false)} src={theme === 'light' ? cross_icon : cross_icon_dark} alt="Close" />
                 </div>
                 <div className="login-popup-inputs">
-                    {currState === "Login" ? null : <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Your name' required />}
-                    <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Your email' required />
+                    {currState === "Login" ? null : <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Name' required />}
+                    <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Email' required />
                     <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder='Password' required />
                 </div>
                 <button type='submit'>{currState === "Sign Up" ? "Create account" : "Login"}</button>
                 <div className="login-popup-condition">
-                    <input type="checkbox" required />
-                    <p>By continuing, I agree to the terms of use & privacy policy.</p>
+                    <input id='tick' type="checkbox" required />
+                    <p id='condition'>By continuing, I agree to the terms of use & privacy policy.</p>
                 </div>
                 {currState === "Login"
-                    ? <p>Create a new account? <span onClick={() => setCurrState("Sign Up")}>Click here</span></p>
-                    : <p>Already have an account? <span onClick={() => setCurrState("Login")}>Login here</span></p>
+                    ? <p>Don't have an account? <span onClick={() => setCurrState("Sign Up")}><p className="link_line">Click here</p></span></p>
+                    : <p>Already have an account? <span onClick={() => setCurrState("Login")}><p className="link_line">Login</p></span></p>
                 }
             </form>
         </div>
