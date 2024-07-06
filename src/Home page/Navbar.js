@@ -6,12 +6,13 @@ import logo_dark from '../assets/logo-dark.png';
 import search_icon_light from '../assets/search-w.png';
 import search_icon_dark from '../assets/search-b.png';
 import toggle_light from '../assets/night.png';
-import toggle_dark from '../assets/day.png';
+import toggle_dark from '../assets/day1.png';
 
 
 import profile_icon from '../assets/profile_icon.jpg';
 import logout_icon from '../assets/logout_icon.png';
 import cart_icon from '../assets/cart_icon.jpg';
+import dark_profile_icon from '../assets/dark_profile_icon.png';
 
 import LoginButton from "../login-signup";
 import "../App.css";
@@ -39,19 +40,21 @@ const Navbar = ({ theme, setTheme,setShowLogin}) => {
     <div className='navbar'>
       <img src={theme === 'light' ? logo:logo_dark} alt="" className='logo' />
 
-      <ul>
-        <li>Home</li>
-        <li>Courses</li>
-        <li>Instructors</li>
-        <li>Account</li>
-        <li>About us</li>
+      <ul className='Navcontainer'>
+        <li className='navbar_items'>Home</li>
+        <li className='navbar_items'>Courses</li>
+        <li className='navbar_items'>Instructors</li>
+        <li className='navbar_items'>Account</li>
+        <li className='navbar_items'>About us</li>
       </ul>
-      {!token?<button className='sign-button' onClick={()=>setShowLogin(true)}>Sign in</button>
+      {!token?<button className='sign-button' onClick={()=>setShowLogin(true)}>Sign In</button>
       :<div className='navbar-profile'>
-        <img src={profile_icon} alt=''/>
+
+        <img className='profile_icon' src={theme === 'light' ? profile_icon: dark_profile_icon} alt=''/>
+
         <ul className='nav-profile-dropdown'>
 
-        <li><img id='cart_icon' src={cart_icon}></img><p>Cart</p></li>
+        {/* <li><img id='cart_icon' src={cart_icon}></img><p>Cart</p></li> */}
 
           <li onClick={logout}><img id='logout_icon' src={logout_icon}></img><p>Logout</p></li>
         </ul>
@@ -63,7 +66,7 @@ const Navbar = ({ theme, setTheme,setShowLogin}) => {
         <img src={theme === 'light' ? search_icon_light : search_icon_dark} alt=" " />
       </div>
       
-      <img onClick={toggle_mode}
+      <img onClick={toggle_mode} 
         src={theme === 'light' ? toggle_light : toggle_dark} alt=" " className='toggle-icon' />
     </div>
   );
