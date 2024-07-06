@@ -10,7 +10,7 @@ import LoginButton from "../login-signup";
 import "../App.css";
 
 
-const Navbar = ({ theme, setTheme }) => {
+const Navbar = ({ theme, setTheme,setShowLogin}) => {
 
   const toggle_mode = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -27,7 +27,7 @@ const Navbar = ({ theme, setTheme }) => {
         <li>Account</li>
         <li>About us</li>
       </ul>
-      <LoginButton />
+      <button className='sign-button' onClick={()=>setShowLogin(true)}>sign in</button>
       <div className='search-box'>
         <input type="text" placeholder='Search' />
         <img src={theme === 'light' ? search_icon_light : search_icon_dark} alt=" " />

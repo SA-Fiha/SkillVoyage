@@ -1,5 +1,5 @@
 
-
+/* 
 .LoginBtn {
   display: block;
   height: 30px;
@@ -15,7 +15,7 @@
 }
 .LoginBtn:hover {
   opacity: 70%;
-}
+} */
 .UserInfo {
   display: flex;
   justify-content: end;
