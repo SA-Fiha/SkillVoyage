@@ -67,4 +67,30 @@
   .dark .search-box input::placeholder {
     color: #222;
   }
+  .sign-button{
+    width: 90px;
+    height: 30px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 40px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  } 
+  .dark .sign-button{
+    color:white;
+    border: 2px solid white;
+
+  }
   
+.sign-button:hover {
+  background-color: #0c1844;
+  color: white;
+  border: 2px solid #0c1844;
+}
+
+
+.dark .sign-button:hover {
+  background-color: #8198EC; /* Darker hover color for dark theme */
+  color: white; /* Different text color for dark theme */
+  border: 2px solid #8198EC; /* Different border color for dark theme */
+}
