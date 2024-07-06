@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png';
+import cross_icon_dark from '../assets/cross_icon_dark.png';
 import logo_dark from '../assets/logo-dark.png';
 import search_icon_light from '../assets/search-w.png';
 import search_icon_dark from '../assets/search-b.png';
 import toggle_light from '../assets/night.png';
 import toggle_dark from '../assets/day.png';
+
+
+import profile_icon from '../assets/profile_icon.jpg';
+import logout_icon from '../assets/logout_icon.png';
+import cart_icon from '../assets/cart_icon.jpg';
+
 import LoginButton from "../login-signup";
 import "../App.css";
+import { StoreContext } from '../context/StoreContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const Navbar = ({ theme, setTheme,setShowLogin}) => {
+
+  const navigate = useNavigate();
+
+  const {token, setToken} = useContext(StoreContext);
+  
+  const logout = ()=>{
+    localStorage.removeItem("token");
+    setToken("");
+    navigate("/HomeContent.js");
+  }
 
   const toggle_mode = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -27,7 +46,18 @@ const Navbar = ({ theme, setTheme,setShowLogin}) => {
         <li>Account</li>
         <li>About us</li>
       </ul>
-      <button className='sign-button' onClick={()=>setShowLogin(true)}>sign in</button>
+      {!token?<button className='sign-button' onClick={()=>setShowLogin(true)}>Sign in</button>
+      :<div className='navbar-profile'>
+        <img src={profile_icon} alt=''/>
+        <ul className='nav-profile-dropdown'>
+
+        <li><img id='cart_icon' src={cart_icon}></img><p>Cart</p></li>
+
+          <li onClick={logout}><img id='logout_icon' src={logout_icon}></img><p>Logout</p></li>
+        </ul>
+        
+        </div> }
+      
       <div className='search-box'>
         <input type="text" placeholder='Search' />
         <img src={theme === 'light' ? search_icon_light : search_icon_dark} alt=" " />
