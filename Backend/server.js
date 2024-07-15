@@ -4,7 +4,7 @@ import { connectDB } from "./config/db.js";
 import skillRouter from "./routes/skillRoute.js";
 import userRouter from "./routes/userRoute.js";
 import 'dotenv/config';
-import http from "http";
+import http from "http-server";
 
 // App Config
 const app = express();
