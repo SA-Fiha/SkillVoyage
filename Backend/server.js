@@ -28,6 +28,12 @@ app.get("/", (req, res) => {
   res.send("API Working");
 });
 
+// Error Handling Middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
 const server = http.createServer(app);
 server.listen(port, () => {
   console.log(`Server started on http://localhost:${port}`);
