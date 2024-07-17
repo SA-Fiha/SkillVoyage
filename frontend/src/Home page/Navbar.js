@@ -14,7 +14,7 @@ import logout_icon from '../assets/logout_icon.png';
 import cart_icon from '../assets/cart_icon.jpg';
 import dark_profile_icon from '../assets/dark_profile_icon.png';
 
-import LoginButton from "../login-signup";
+
 import "../App.css";
 import { StoreContext } from '../context/StoreContext';
 import { useNavigate } from 'react-router-dom';

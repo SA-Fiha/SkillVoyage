@@ -31,10 +31,10 @@ app.get("/", (req, res) => {
 // Error Handling Middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
+  res.status(500).send('Something broke in middleware!');
 });
 
 const server = http.createServer(app);
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`Server started on http://localhost:${port}`);
 });
