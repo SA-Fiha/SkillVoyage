@@ -1,10 +1,9 @@
 import cors from "cors";
 import express from "express";
 import { connectDB } from "./config/db.js";
-import skillRouter from "./routes/skillRoute.js";
 import userRouter from "./routes/userRoute.js";
 import 'dotenv/config';
-import http from "http-server";
+import http from "http";
 
 // App Config
 const app = express();
@@ -21,7 +20,6 @@ connectDB().catch(error => {
 });
 
 // API endpoints
-app.use("/api/skill", skillRouter);
 app.use("/api/user", userRouter);
 
 app.get("/", (req, res) => {
@@ -35,6 +33,6 @@ app.use((err, req, res, next) => {
 });
 
 const server = http.createServer(app);
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Server started on http://localhost:${port}`);
 });

@@ -1,21 +1,3 @@
-
-/* 
-.LoginBtn {
-  display: block;
-  height: 30px;
-  width: 70px;
-  justify-content: center;
-  align-items: center;
-  background-color: #ff6969;
-  border: 2px solid black;
-  color: white;
-  font-family: inherit;
-  font-size: medium;
-  margin-top: 50px;
-}
-.LoginBtn:hover {
-  opacity: 70%;
-} */
 .UserInfo {
   display: flex;
   justify-content: end;
